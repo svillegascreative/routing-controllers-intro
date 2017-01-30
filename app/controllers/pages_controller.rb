@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def welcome
-    render :about
+    @header = "This is the welcome page!"
   end
 
   def about
