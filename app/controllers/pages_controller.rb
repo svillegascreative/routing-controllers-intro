@@ -26,4 +26,13 @@ class PagesController < ApplicationController
     @kitten_url = "http://lorempixel.com/#{requested_width}/#{requested_height}/cats"
   end
 
+  def secrets
+    if params[:magic_word] == "please"
+      render :secrets
+    else
+      flash[:notice] = "Don't forget to say the magic word!"
+      redirect_to "/welcome"
+    end
+  end
+
 end
